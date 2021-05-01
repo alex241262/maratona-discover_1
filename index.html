@@ -44,7 +44,7 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" class="button new">+ Nova Transaçao</a>
+            <a href="#" onclick="Modal.open()" class="button new">+ Nova Transaçao</a>
         <table id="data-table">
             <thead>
                 <tr>
@@ -81,47 +81,61 @@
     </main>
 
     <div class="modal-overlay">
-        <div class="container">
+        <!--<div class="container">-->
             <div class="modal">
                <div id="form">
-                <h2>Nova Transação</h2>
-                <form action="">
-                    <div class="input-group">
-                    <label class="sr-only" for="description">Descrição</label>
-                    <input 
-                        type="text" 
-                        id="description" 
-                        name="description" 
-                        placeholder="Descricao">
-                    </div>
-                    <div class="input-group"></div>
-                        <label class="sr-only" for="amount">Valor</label>
-                        <input 
-                            type="number" 
-                            id="amount" 
-                            name="amount" 
-                            placeholder="0,00" 
-                            step="0.01">
-                        </div>
-                        <small class="help">Use o sinal -(negativo) para despesas e ,(vírgila) para cassas decimais</small>
+                    <h2>Nova Transação</h2>
+                    <form action="">
                         <div class="input-group">
-                            <label class="sr-only" for="date">Data</label>
+                            <label class="sr-only" for="description">Descrição</label>
                             <input 
-                                type="date" 
-                                id="date" 
-                                name="date">
-                            </div>
-                    <div class="input-group actions">
-                        <a href="#" class="button cancel">Cancelar</a>
-                        <button>Salvar</button>
-                    </div>
-                </form>
+                                type="text" 
+                                id="description" 
+                                name="description" 
+                                placeholder="Descricao"/>
+                        </div>
+                        <div class="input-group">
+                            <label class="sr-only" for="amount">Valor</label>
+                            <input 
+                                type="number" 
+                                id="amount" 
+                                name="amount" 
+                                placeholder="0,00" 
+                                step="0.01"/>
+                        </div>
+                            <small class="help">Use o sinal -(negativo) para despesas e ,(vírgila) para cassas decimais</small>
+                            <div class="input-group">
+                                <label class="sr-only" for="date">Data</label>
+                                <input 
+                                    type="date" 
+                                    id="date" 
+                                    name="date"/>
+                                </div>
+                        <div class="input-group actions">
+                            <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                            <button>Salvar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        <!--</div>-->
     </div>
 
-    <footer><p>Dev.Finance$</p></footer>
+    <footer><p>Dev.Finance $</p></footer>
+<script>
+const Modal ={
+    open(){//abrir o modal
+    //adicionar a classe active ao modal
+        //alert('Abrir o modal')
+        document.querySelector('.modal-overlay').classList.add('active')
+    },
+    close(){//fechar o modal
+    //remover a classe active do modal
+        document.querySelector('.modal-overlay').classList.remove('active')
+    }
+}
 
+</script>
 
     
 </body>
