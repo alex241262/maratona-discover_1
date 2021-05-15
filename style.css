@@ -4,7 +4,7 @@
     --green:#49AA26;
     --light-green:#3dd705;
     --red: #e92929;
-    --body:#F8F8FF;
+    --body:#F0F8FF;
 }
 *{
     margin: 0;
@@ -191,7 +191,6 @@ td.expense{
     background: #f0f2f5;
     padding: 2.4rem;
     position: relative;
-    align-items: center;
     z-index: 1;
 }
 /* form*/
